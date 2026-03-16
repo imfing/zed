@@ -1320,15 +1320,15 @@ impl Item for TerminalView {
 
     fn close_confirmation(&self, cx: &App) -> Option<CloseConfirmation> {
         let confirm_on_kill = TerminalSettings::get_global(cx).confirm_on_kill;
-        let terminal = self.terminal().read(cx);
-        let title = terminal.title(true);
 
         match confirm_on_kill {
             TerminalConfirmOnKill::Never => None,
             TerminalConfirmOnKill::Always => {
+                let terminal = self.terminal().read(cx);
                 if !terminal.has_running_process() {
                     return None;
                 }
+                let title = terminal.title(true);
                 let message = "Do you want to terminate the active terminal session?";
                 Some(CloseConfirmation {
                     level: PromptLevel::Warning,
