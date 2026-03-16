@@ -10,9 +10,8 @@ use editor::{Editor, EditorSettings, actions::SelectAll, blink_manager::BlinkMan
 use gpui::{
     Action, AnyElement, App, ClipboardEntry, DismissEvent, Entity, EventEmitter, ExternalPaths,
     FocusHandle, Focusable, Font, KeyContext, KeyDownEvent, Keystroke, MouseButton, MouseDownEvent,
-    Pixels, Point, PromptLevel, Render, ScrollWheelEvent, Styled, Subscription, Task,
-    WeakEntity, actions,
-    anchored, deferred, div,
+    Pixels, Point, PromptLevel, Render, ScrollWheelEvent, Styled, Subscription, Task, WeakEntity,
+    actions, anchored, deferred, div,
 };
 use itertools::Itertools;
 use menu;
@@ -56,8 +55,8 @@ use workspace::{
     CloseActiveItem, DraggedSelection, DraggedTab, NewCenterTerminal, NewTerminal, Pane,
     ToolbarItemLocation, Workspace, WorkspaceId, delete_unloaded_items,
     item::{
-        HighlightedText, Item, ItemEvent, SerializableItem, TabContentParams, TabTooltipContent,
-        CloseConfirmation,
+        CloseConfirmation, HighlightedText, Item, ItemEvent, SerializableItem, TabContentParams,
+        TabTooltipContent,
     },
     register_serializable_item,
     searchable::{
