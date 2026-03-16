@@ -1980,7 +1980,7 @@ impl Pane {
                         Ok(1..) | Err(_) => {
                             should_close = false;
                             should_save = false;
-                        },
+                        }
                     }
                 }
                 if save_intent == SaveIntent::Close {
