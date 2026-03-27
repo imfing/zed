@@ -1329,7 +1329,7 @@ impl Item for TerminalView {
                     return None;
                 }
                 let title = terminal.title(true);
-                let message = "Do you want to terminate the active terminal session?";
+                let message = "Terminate the active terminal session?";
                 Some(CloseConfirmation {
                     level: PromptLevel::Warning,
                     message: message.into(),
